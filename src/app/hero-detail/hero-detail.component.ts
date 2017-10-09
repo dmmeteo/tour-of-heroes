@@ -19,6 +19,11 @@ export class HeroDetailComponent implements OnInit {
        private route: ActivatedRoute,
        private location: Location
     ) {}
+    
+    save(): void {
+        this.heroService.update(this.hero)
+            .then(() => this.goBack());
+    }
 
     ngOnInit(): void {
         this.route.paramMap
